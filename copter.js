@@ -1,16 +1,4 @@
 function upsidedown(){
-  client.after(1000, function(){
-    this.animate('flipLeft', 1000);
-  });
-  client.after(2000, function(){
-    this.stop();
-  });
-  client.after(1000, function(){
-    this.animate('flipRight', 1000);
-  });
-  client.after(2000, function(){
-    this.stop();
-  }); 
   client.after(2000, function(){
     this.animate('yawDance', 1000);
   });
@@ -72,36 +60,31 @@ function groove(){
 	});
 }
 function cha_cha(){
-  client.after(2000, function(){
-    this.animate('thetaDance', 1000);
+  client.after(10000, function(){
+    this.animate('thetaDance', 4000);
   });
-    client.after(2000, function(){
+   client.after(2000, function(){
     this.stop();
   });
-  client.after(1000, function(){
-    this.animate('yawDance', 1000);
-  });
-  client.after(1000, function(){
-    this.animate('flipLeft', 1000);
-  });
-  client.after(2000, function(){
-    this.stop();
-  });
-    client.after(1000, function(){
-    this.animate('flipRight', 1000);
-  });
+  client.after(3000, function(){
+    this.animate('yawDance', 3000);
+  }); 
 }
 
 function twirly_twist(){
-    client.after(2000, function(){
-        this.animate('yawDance', 1000);
+    console.log("you are in here!!!");
+    client.after(4000, function(){
+        this.animate('turnaround', 2000);
+        console.log('in the function');
+     });
+   console.log('after the function');
+    
+    client.after(3000, function(){
+        this.animate('turnaround', 3000);
     });
-    client.after(1000, function(){
-        this.animate('turnaround', 1000);
-    });
-    client.after(1000, function(){
-        this.animate('yawDance', 1000);
-    });
+    client.after(3000, function(){
+        this.animate('yawDance', 3000);
+    }); 
 }
 
 function grapevine(){
@@ -151,42 +134,34 @@ client.after(1000, function(){
 
 };
 
+function land(){
+client.after(10000, function(){
+  this.stop();
+	this.land();
+}); 
+};
+
+
+
 var arDrone = require('ar-drone');
 var client = arDrone.createClient();
 
 client.takeoff();
 
-groove();
-twirly_twist();
+
 cha_cha();
 grapevine();
+twirly_twist();
 whatever();
 upsidedown();
-
-client.after(2000, function(){
-  this.land();
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+groove();
+cha_cha();
+grapevine();
+twirly_twist();
+whatever();
+upsidedown();
+groove();
+land();
 
 
 
