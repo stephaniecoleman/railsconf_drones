@@ -1,3 +1,28 @@
+function upsidedown(){
+  client.after(1000, function(){
+    this.animate('flipLeft', 1000);
+  });
+  client.after(2000, function(){
+    this.stop();
+  });
+  client.after(1000, function(){
+    this.animate('flipRight', 1000);
+  });
+  client.after(2000, function(){
+    this.stop();
+  }); 
+  client.after(2000, function(){
+    this.animate('yawDance', 1000);
+  });
+  client.after(3000, function(){
+    this.animate('phiThetaMixed', 1000);
+  });
+  client.after(6000, function(){
+    this.animate('doublePhiThetaMixed', 1000);
+  });
+}
+
+
 function whatever(){
     client.after(4000, function(){
         this.animate('turnaround', 3000);
@@ -136,6 +161,7 @@ twirly_twist();
 cha_cha();
 grapevine();
 whatever();
+upsidedown();
 
 client.after(2000, function(){
   this.land();
