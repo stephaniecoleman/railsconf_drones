@@ -88,7 +88,7 @@ function twirly_twist(){
   // });
   client.after(4000, function(){
     this.animate('wave', 8000);
-  // });
+  });
   // client.after(4000, function(){
   //   this.stop();
   // });
@@ -141,7 +141,7 @@ wait();
 wait();
 cha_cha();
 updown();
-twirly_twist();
+// twirly_twist();
 whatever();
 groove();
 // cha_cha();
