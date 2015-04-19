@@ -80,22 +80,22 @@ function cha_cha(){
 }
 
 function twirly_twist(){
+  // client.after(4000, function(){
+  //   this.animate('turnaround', 4000);
+  //  });
+  // client.after(4000, function(){
+  //   this.stop();
+  // });
   client.after(4000, function(){
-    this.animate('turnaround', 4000);
-   });
-  client.after(4000, function(){
-    this.stop();
-  });
-  client.after(2000, function(){
-    this.animate('wave', 4000);
-  });
-  client.after(4000, function(){
-    this.stop();
-  });
-  client.after(2000, function(){
-    this.animate('turnaround', 4000);
-  }); 
-  client.after(4000, function(){
+    this.animate('wave', 8000);
+  // });
+  // client.after(4000, function(){
+  //   this.stop();
+  // });
+  // client.after(2000, function(){
+  //   this.animate('turnaround', 4000);
+  // }); 
+  client.after(8000, function(){
     this.stop();
   });
 }
@@ -138,11 +138,11 @@ var client = arDrone.createClient();
 
 client.takeoff();
 wait();
+wait();
 cha_cha();
 updown();
 twirly_twist();
 whatever();
-// upsidedown();
 groove();
 // cha_cha();
 // updown();
