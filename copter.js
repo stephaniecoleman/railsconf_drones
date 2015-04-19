@@ -10,160 +10,145 @@ function upsidedown(){
   });
 }
 
-
 function whatever(){
-    client.after(4000, function(){
-        this.animate('turnaround', 3000);
-    });
-    client.after(1000, function(){
-        this.animate('wave', 4000);
-    });
-    client.after(1000, function(){
-        this.animate('turnaround', 3000);
-    });
-    client.after(1000, function(){
-        this.animate('doublePhiThetaMixed', 8000);
-    });
+  client.after(4000, function(){
+    this.animate('doublePhiThetaMixed', 4000);
+  });
+  client.after(4000, function(){
+    this.stop();
+  });
+  client.after(2000, function(){
+    this.animate('yawDance', 4000);
+  });
+  client.after(4000, function(){
+    this.stop();
+  });
+  client.after(2000, function(){
+    this.animate('doublePhiThetaMixed', 4000);
+  });
+  client.after(4000, function(){
+    this.stop();
+  });
 };
 
 function groove(){
-	client.after(2000, function(){
+	client.after(4000, function(){
 		this.left(0.1);
 	});
-
 	client.after(2000, function(){
 		this.stop();
 	});
-
-	client.after(2000, function(){
+	client.after(1000, function(){
 		this.right(0.1);
 	});
-
 	client.after(2000, function(){
 		this.stop();
 	});
-
-	client.after(2000, function(){
+	client.after(1000, function(){
 		this.left(0.1);
 	});
-
 	client.after(2000, function(){
 		this.stop();
 	});
-
-	client.after(2000, function(){
+	client.after(1000, function(){
 		this.right(0.1);
 	});
-
 	client.after(2000, function(){
 		this.stop();
 	});
 }
-function cha_cha(){
-  client.after(10000, function(){
-    this.animate('thetaDance', 4000);
-  });
-   client.after(2000, function(){
+
+function wait(){
+  client.after(4000, function(){
     this.stop();
   });
-  client.after(3000, function(){
-    this.animate('yawDance', 3000);
-  }); 
+}
+
+function cha_cha(){
+  client.after(4000, function(){
+    this.animate('thetaDance', 4000);
+  });
+  client.after(4000, function(){
+    this.stop();
+  });
+  client.after(2000, function(){
+    this.animate('phiDance', 4000);
+  });
+  client.after(4000, function(){
+    this.stop();
+  });
 }
 
 function twirly_twist(){
-    console.log("you are in here!!!");
-    client.after(4000, function(){
-        this.animate('turnaround', 2000);
-        console.log('in the function');
-     });
-   console.log('after the function');
-    
-    client.after(3000, function(){
-        this.animate('turnaround', 3000);
-    });
-    client.after(3000, function(){
-        this.animate('yawDance', 3000);
-    }); 
+  client.after(4000, function(){
+    this.animate('turnaround', 4000);
+   });
+  client.after(4000, function(){
+    this.stop();
+  });
+  client.after(2000, function(){
+    this.animate('wave', 4000);
+  });
+  client.after(4000, function(){
+    this.stop();
+  });
+  client.after(2000, function(){
+    this.animate('turnaround', 4000);
+  }); 
+  client.after(4000, function(){
+    this.stop();
+  });
 }
 
-function grapevine(){
-
-client.after(1000, function(){
-	this.right(0.1);
-});
-
-client.after(1000, function(){
-
-	this.stop();
-});
-
-
-client.after(1000, function(){
-
-	this.left(0.1);
-});
-
-client.after(1000, function(){
-
-	this.stop();
-});
-
-
-client.after(1000, function(){
-
-	this.front(0.1);
-});
-client.after(1000, function(){
-
-	this.stop();
-});
-
-client.after(1000, function(){
-	this.back(0.1);
-});
-client.after(1000, function(){
-
-	this.stop();
-});
-
-client.after(1000, function(){
-
-	this.animate("wave", 4000);
-});
-
+function updown(){
+  client.after(4000, function(){
+  	this.up(1);
+  });
+  client.after(1000, function(){
+  	this.stop();
+  });
+  client.after(1000, function(){
+  	this.down(1);
+  });
+  client.after(1000, function(){
+  	this.stop();
+  });
+  client.after(2000, function(){
+    this.up(1);
+  });
+  client.after(1000, function(){
+    this.stop();
+  });
+  client.after(1000, function(){
+    this.down(1);
+  });
+  client.after(1000, function(){
+    this.stop();
+  });
 };
 
 function land(){
-client.after(10000, function(){
-  this.stop();
-	this.land();
-}); 
+  client.after(4000, function(){
+  	this.land();
+  }); 
 };
-
-
 
 var arDrone = require('ar-drone');
 var client = arDrone.createClient();
 
 client.takeoff();
-
-
+wait();
 cha_cha();
-grapevine();
+updown();
 twirly_twist();
 whatever();
-upsidedown();
+// upsidedown();
 groove();
-cha_cha();
-grapevine();
-twirly_twist();
-whatever();
-upsidedown();
-groove();
+// cha_cha();
+// updown();
+// twirly_twist();
+// whatever();
+// upsidedown();
+// groove();
+// wait();
 land();
-
-
-
-
-
